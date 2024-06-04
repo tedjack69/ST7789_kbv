@@ -77,36 +77,16 @@
 
 static uint8_t spibuf[16];
 
-#if 0
-#elif defined(ESP32)
-#define CD_PIN     13
-#define CS_PIN     5
-#define RESET_PIN  12
-#define SD_PIN     17
-#define MOSI_PIN   23
-#define SCK_PIN    18
-#elif defined(ESP8266)
-#define CD_PIN     D9
-#define CS_PIN     D10
-#define RESET_PIN  D8
-#define SD_PIN     D4
-#define MOSI_PIN   D11
-#define SCK_PIN    D13
-#elif defined(MY_BLUEPILL)
-#define CD_PIN     PA10
-#define CS_PIN     PB12
-#define RESET_PIN  PA9
-#define SD_PIN     PA0
-#define MOSI_PIN   PB15
-#define SCK_PIN    PB13
-#else
-#define CD_PIN     9
-#define CS_PIN     10         //.kbv
-#define RESET_PIN  8
-#define SD_PIN     4
-#define MOSI_PIN   11
-#define SCK_PIN    13
-#endif
+#if 0 
+#else 
+#define CD_PIN     48 //DC 
+#define CS_PIN     53 
+#define RESET_PIN  49 
+#define SD_PIN     47 //sd-cs 
+#define MOSI_PIN   51 
+#define SCK_PIN    52 
+#endif 
+
 
 #define SETDDR  { CS_OUTPUT; CD_OUTPUT; RESET_OUTPUT; PIN_HIGH(SD_PORT, SD_PIN); PIN_OUTPUT(SD_PORT, SD_PIN); }
 
